@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: wheat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-box {
+        width: 320px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form input {
+        width: 91%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background: #0099ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .login-btn:hover {
+        background: #007acc;
+    }
+
+    .text {
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .text a {
+        color: #0099ff;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+
+    <h1>Silicon Valley Index</h1>
+
+    <div class="form-box">
+        <h2>Login</h2>
+
+        <form onsubmit="login(event)">
+            <input type="text" id="i_user" placeholder="Enter phone number" required>
+
+            <input type="password" id="l_pass" placeholder="Enter password" required>
+
+            <button class="login-btn" type="submit">Login</button>
+        </form>
+
+        <p class="text">
+            Don’t have an account?
+            <a href="register.html">Create Account</a>
+        </p>
+        <p id="msg" style="text-align:center; color:green; font-weight:bold;"></p>
+    </div>
+
+</body>
+
+<script>
+    function login(event) {
+        event.preventDefault(); // STOP page refresh
+
+        let user = document.getElementById("i_user").value;
+        let pass = document.getElementById("l_pass").value;
+
+        // Get stored data
+        let savedUser = localStorage.getItem("username");
+        let savedPass = localStorage.getItem("password");
+
+        if (user == savedUser && pass == savedPass) {
+            document.getElementById("msg").innerText = "Login Successful!";
+
+            setTimeout(() => {
+            window.location.href = "limited.html"; // redirect after 1 sec
+        }, 1000);
+        
+        } else {
+            document.getElementById("msg").innerText = "Invalid Username or Password!";
+        }
+    }
+</script>
+
+</html>

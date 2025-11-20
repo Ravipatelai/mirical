@@ -1,0 +1,259 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #3a3a3a, #b4a44e);
+    color: white;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+/* Each box */
+.box {
+    width: 20%;
+    background: rgba(255,255,255,0.15);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Revenue value */
+.value {
+    color: #ffeb3b;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Icons */
+.icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Yellow text */
+.label {
+    color: #ffeb3b;
+    font-size: 16px;
+}
+
+/* Bottom red notice */
+.footer-note {
+    background: #e63b3b;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+/* Profile Section */
+.profile-box {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-image {
+    width: 70px;
+    height: 70px;
+    background: #2f2f2f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.profile-details {
+    line-height: 1.4;
+}
+
+.profile-details span {
+    color: #d0ffea;
+}
+
+/* Balance Card */
+.balance-card {
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.balance-card h3 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.balance-card .amount {
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.balance-card .sub-balance {
+    color: #00ffa7;
+}
+
+/* Icon Section */
+.icon-row {
+    display: flex;
+    justify-content: space-around;
+    margin: 25px 0;
+}
+
+.icon-box {
+    text-align: center;
+    width: 70px;
+}
+
+.icon-box div {
+    width: 55px;
+    height: 55px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 26px;
+    margin: auto;
+}
+
+.icon-label {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* Menu Text Links */
+.menu-links {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-item {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.bottom-item {
+    text-align: center;
+    color: #777;
+    font-size: 14px;
+}
+
+.bottom-item.active {
+    color: #0099ff;
+    font-weight: bold;
+}
+
+body {
+  background: linear-gradient(120deg, #b5ad32, #2e2e2e);
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+/* Section */
+.section {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section p {
+  margin: 5px 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Arrow Icon */
+.arrow {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 25px;
+  opacity: 0.7;
+}
+
+/* Logout Box */
+.logout-box {
+  margin-top: 20px;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.logout-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 0;
+    background: linear-gradient(120deg, #c7c15b, #8a8f8c, #7a7a7a);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.nav-item {
+    text-align: center;
+    color: #010101;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.nav-item .icon {
+    display: block;
+    font-size: 26px;
+}
+
+.nav-item p {
+    margin: 5px 0 0;
+    font-size: 13px;
+}
+
+.nav-item.active {
+ 
+   
+    
+}
+
+

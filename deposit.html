@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recharge</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000, #b3a150);
+    color: white;
+}
+
+.header {
+    background: #1ea6df;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header h2 {
+    margin: 0;
+}
+
+.back-arrow {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container {
+    padding: 20px;
+}
+
+.balance {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #ff3d3d;
+}
+
+.section-title {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.section-subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.amount-input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
+.quick-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.quick-grid button {
+    padding: 12px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.quick-grid button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.payment-option {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.details {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.bottom-btn {
+    width: 100%;
+    background: #00d1b1;
+    color: white;
+    font-size: 20px;
+    padding: 18px;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    border-radius: 0;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <span class="back-arrow">&#8592;</span>
+    
+    <h2>Recharge</h2>
+</div>
+
+<div class="container">
+
+    <div class="balance">Rs0.00</div>
+    <div class="section-title">Account Management</div>
+    <div class="section-subtitle">Deposit</div>
+
+    <input type="number" id="amountInput" placeholder=" Enter amount" class="amount-input">
+
+    <div class="section-title">Quick Amount</div>
+
+    <div class="quick-grid">
+        <button onclick="setAmount(100)">100</button>
+        <button onclick="setAmount(300)">300</button>
+        <button onclick="setAmount(3000)">3000</button>
+        <button onclick="setAmount(15000)">15000</button>
+        <button onclick="setAmount(50000)">50000</button>
+        <button onclick="setAmount(100000)">100000</button>
+    </div>
+
+    <div class="section-title">Payment Channel</div>
+
+    <div class="payment-option">
+        <label><input type="radio" name="payment" checked> Recharge 1</label>
+    </div>
+
+    <div class="details">
+        <h4>Detailed Explanation</h4>
+        <p>1. Do not modify the deposit amount. Changing the amount is not allowed; otherwise, the bonus will not be credited.</p>
+        <p>2. To activate each deposit, it must be initiated from this page.</p>
+        <p>3. If there is a delay of more than 5 minutes, contact support.</p>
+        <p>4. If failed, try again with another amount.</p>
+    </div>
+
+</div>
+
+<button onclick="payUPI()" class="bottom-btn">Recharge Now</button>
+
+<script>
+function setAmount(val) {
+    document.getElementById("amountInput").value = val;
+}
+
+function payUPI() {
+    let amount = document.getElementById("amountInput").value;
+
+    if (amount === "" || amount <= 0) {
+        alert("Please enter a valid amount!");
+        return;
+    }
+
+    let upiId = "ghorha@ybl"; 
+    let name = "Ravi patel";
+
+    let url = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(name)}&am=${amount}&cu=INR`;
+
+    window.location.href = url; 
+}
+
+// ✅ Correct: Back button listener OUTSIDE function
+document.querySelector(".back-arrow").addEventListener("click", function() {
+    window.history.back();
+});
+</script>
+
+<br><br><br><br><br><br>
+
+</body>
+</html>

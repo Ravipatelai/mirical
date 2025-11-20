@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #000000, #b49e4d);
+    color: white;
+}
+
+/* Header */
+.header {
+    background: #1fa2e1;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.header h2 {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 22px;
+}
+
+.back {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 0;
+}
+
+.tabs span {
+    font-size: 18px;
+    color: #ddd;
+    cursor: pointer;
+}
+
+.tabs {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    padding: 15px;
+}
+
+/* Balance Cards */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    margin: 0 0 5px;
+}
+
+.date {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.amount {
+    float: right;
+    font-size: 20px;
+    margin-top: -35px;
+}
+
+.green {
+    color: #00ff00;
+}
+
+.red {
+    color: #ff3333;
+}
+
+.type {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+</style>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <span class="back" onclick="window.history.back()">&#8592;</span>
+        <h2>Balance Details</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <span class="active">All</span>
+        <span>Deposit</span>
+        <span>Withdrawal</span>
+    </div>
+
+    <!-- Balance Cards -->
+    
+
+    </div>
+
+</body>
+</html>

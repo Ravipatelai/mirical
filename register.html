@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Account</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: wheat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-box {
+        width: 320px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form input {
+        width: 91%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    form button {
+        width: 100%;
+        padding: 12px;
+        background: #0099ff;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 18px;
+    }
+
+    form button:hover {
+        background: #007acc;
+    }
+
+    a {
+        text-decoration: none;
+        color: #0099ff;
+    }
+
+    #msg {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+        color: green;
+    }
+</style>
+
+<body>
+
+    <h1>Silicon Valley Index</h1>
+
+    <div class="form-box">
+        <h2>Create New Account</h2>
+
+        <form id="regForm">
+            <input type="text" id="r_user" placeholder="Enter phone number" required>
+
+            <input type="password" id="r_pass" placeholder="Create Password" required>
+
+            <input type="password" id="confirm_pass" placeholder="Confirm Password" required>
+
+            <input type="text" placeholder="Code">
+
+            <button type="submit">Register</button>
+
+            <p style="margin-left: 40px;">Already have an account? <a href="login.html">Log in</a></p>
+
+            <p id="msg"></p>
+        </form>
+    </div>
+
+</body>
+
+<script>
+    document.getElementById("regForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // Stop refresh
+
+        let user = document.getElementById("r_user").value;
+        let pass = document.getElementById("r_pass").value;
+        let confirmPass = document.getElementById("confirm_pass").value;
+
+        if (pass !== confirmPass) {
+            document.getElementById("msg").innerText = "Passwords do not match!";
+            document.getElementById("msg").style.color = "red";
+            return;
+        }
+
+        // Save data to localStorage
+        localStorage.setItem("username", user);
+        localStorage.setItem("password", pass);
+
+        document.getElementById("msg").innerText = "Registration Successful!";
+
+        setTimeout(() => {
+            window.location.href = "limited.html"; // redirect after 1 sec
+        }, 2000);
+    });
+</script>
+
+</html>
