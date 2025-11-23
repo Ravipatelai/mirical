@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Card Information</title>
+    <title>Bank add</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
@@ -83,24 +83,26 @@
 
     <div class="container">
         
-        <div class="input-box">
+          <form id="save">
+            <div class="input-box">
             <span class="icon">&#128100;</span>
-            <input type="text" placeholder="Enter Name" required>
+            <input type="text" id="name1" placeholder="Enter Name" required>
         </div>
 
         <div class="input-box">
             <span class="icon">🏦</span>
-            <input type="text" placeholder="Account number" required>
+            <input type="text" id="account_number" placeholder="Account number" required>
         </div>
 
         <div class="input-box">
             <span class="icon">🔢</span>
-            <input type="text" placeholder="IFSC Code" required>
+            <input type="text" id="ifsc" placeholder="IFSC Code" required>
         </div>
         
        <div id="apna" style="display: flex; justify-content: center;">
         <button onclick="save()" style="height: 40px; width: 120px; background-color: rgb(49, 190, 143); border-radius: 10px;">Save</button>
        </div>
+          </form>
         
 
         <p class="info">
@@ -112,5 +114,37 @@
     </div>
 
 </body>
+<script>
+document.getElementById("save").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let name1 = document.getElementById("name1").value;
+    let account_number = document.getElementById("account_number").value;
+    let ifsc = document.getElementById("ifsc").value;
+
+    // Save in localStorage
+    localStorage.setItem("name", name1);
+    localStorage.setItem("account", account_number);
+    localStorage.setItem("ifsc", ifsc);
+
+    alert("Bank Information Saved Successfully!");
+});
+
+// ---- AUTO FILL ----
+window.onload = function () {
+    if (localStorage.getItem("name")) {
+        document.getElementById("name1").value = localStorage.getItem("name");
+    }
+
+    if (localStorage.getItem("account")) {
+        document.getElementById("account_number").value = localStorage.getItem("account");
+    }
+
+    if (localStorage.getItem("ifsc")) {
+        document.getElementById("ifsc").value = localStorage.getItem("ifsc");
+    }
+};
+</script>
+
 
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>User Dashboard</title>
+<title>profile</title>
 <link rel="stylesheet" href="header_profile.css">
 </head>
 
@@ -32,12 +32,15 @@
 
 <!-- Profile Section -->
 <div class="profile-box">
-    <div class="profile-image">J</div>
+    <div class="profile-image" id="one_char"></div>
 
     <div class="profile-details">
-        <h3 style="margin:0;">New User</h3>
-        ID: <span>38729</span><br>
-        Invitation Code: <span>2A6A8</span>
+        
+
+
+        <h3 style="margin:0;" id="name">New User</h3>
+        ID: <span id="mob"></span><br>
+        Invitation Code: <span id="random"></span>
     </div>
 </div>
 
@@ -68,7 +71,7 @@
     </div>
 
     <div class="icon-box">
-        <a href="bankadd.html" style="text-decoration: none; color: white; cursor: pointer;">
+        <a href="bank.html" style="text-decoration: none; color: white; cursor: pointer;">
         <div>🏦</div>
         <p class="icon-label">Bank<br>Account</p></a>
     </div>
@@ -100,4 +103,14 @@
 
 
 </body>
+<script>
+        document.getElementById("name").innerText = localStorage.getItem("name");
+        document.getElementById("one_char").innerText = localStorage.getItem("char");
+        document.getElementById("mob").innerText = localStorage.getItem("username");
+
+        
+        document.getElementById("random").innerText = localStorage.getItem("code");
+
+        random 
+    </script>
 </html>

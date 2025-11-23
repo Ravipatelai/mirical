@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create New Account</title>
+    <title>register</title>
 </head>
 
 <style>
@@ -78,13 +78,14 @@
         <h2>Create New Account</h2>
 
         <form id="regForm">
+            <input type="text" id="name" placeholder="Username">
             <input type="text" id="r_user" placeholder="Enter phone number" required>
 
             <input type="password" id="r_pass" placeholder="Create Password" required>
 
             <input type="password" id="confirm_pass" placeholder="Confirm Password" required>
 
-            <input type="text" placeholder="Code">
+           
 
             <button type="submit">Register</button>
 
@@ -99,9 +100,15 @@
 <script>
     document.getElementById("regForm").addEventListener("submit", function (e) {
         e.preventDefault(); // Stop refresh
-
+        localStorage.clear();
+        let name =document.getElementById("name").value;
         let user = document.getElementById("r_user").value;
         let pass = document.getElementById("r_pass").value;
+
+        let result = name.charAt(0).toUpperCase() + name.slice(1);
+        let char =result[0];
+       
+        let otp = Math.floor(1000 + Math.random() * 9000);
         let confirmPass = document.getElementById("confirm_pass").value;
 
         if (pass !== confirmPass) {
@@ -111,14 +118,19 @@
         }
 
         // Save data to localStorage
+        localStorage.setItem("code",otp)
+        localStorage.setItem("name",name)
+        localStorage.setItem("char",char);
         localStorage.setItem("username", user);
         localStorage.setItem("password", pass);
+
+       
 
         document.getElementById("msg").innerText = "Registration Successful!";
 
         setTimeout(() => {
             window.location.href = "limited.html"; // redirect after 1 sec
-        }, 2000);
+        }, 1000);
     });
 </script>
 
