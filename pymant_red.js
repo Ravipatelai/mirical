@@ -1,5 +1,5 @@
 function payFixed(amount) {
-  let upiId = "ghorha@ybl";
+  let upiId = "XXX";
   let name = "Ravi Patel";
 
   // UPI Payment Link
